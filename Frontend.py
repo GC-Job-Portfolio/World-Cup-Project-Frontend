@@ -1,5 +1,8 @@
 from flask import * #Imports website framework
-from main import * #Imports actual model
+from main import * #Imports actual model 
+
+#For reference, model was designed to take 2 football teams and use provided database and multi-layer perceptron to determine who was more likely to win game.
+#Actual model not included here as not solely my work, when called asked for teams playing and output predicted result and accuracy of prediction. 
 
 #The list of teams that can be selected from the dropdown lists, contains all (and only) the countries listed in the CSV
 teams = ["Argentina", "Belgium", "Bolivia", "Brazil", "Chile", "France", "Mexico", "Paraguay", "Peru", "Romania", "United States", "Uruguay", "Yugoslavia", "Austria",

@@ -1,0 +1,103 @@
+<title>World Cup Prediction Tool</title>
+
+<style type="text/css">    
+    body
+    {
+        background-image: url({{ url_for('static', filename='Background.jpg') }});
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    h1
+    {
+      font-size:48px;
+      text-align: center;
+      font-family:Arial, sans-serif;
+      text-shadow:2px 0 15px #292929;
+      letter-spacing:4px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color:#DDD;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    h2
+    {
+      font-size:48px;
+      text-align: center;
+      font-family:Arial, sans-serif;
+      text-shadow:2px 0 15px #292929;
+      letter-spacing:4px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-left: 35%;
+      margin-right: 35%;
+      color:#DDD;
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 3px solid #cccccc;
+    }
+
+    h3
+    {
+        font-size:24px;
+        text-align: center;
+        position: absolute;
+        left: 100px;
+        margin-right: 60%;
+        font-family: Arial, sans-serif;
+        color:rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    h4
+    {
+        font-size:24px;
+        text-align: center;
+        position: absolute;
+        right: 100px;
+        margin-left: 60%;
+        font-family: Arial, sans-serif;
+        color:rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+</style>
+
+<h1>World Cup Prediction Tool</h1>
+<h2>
+    <form method="POST" action="{{ url_for('Results') }}">
+    <select name="Team 1">
+        {% for team in ListOfTeams %}
+            <option value="{{team}}">{{ team }}</option>"
+        {% endfor %}
+    </select>
+    VS
+    <select name="Team 2">
+        {% for team in ListOfTeams %}
+            <option value="{{team}}">{{ team }}</option>"
+        {% endfor %}
+    </select>
+    <br>
+    <button class="btn btn-default" type="submit">Submit!</button>
+    </form>
+</h2>
+
+<h3>
+<u>Instructions</u> <br>
+To use this program, you will need to select two teams. This can be done using
+the drop down lists above. The first team you select, the one on the left, will
+be the "home" team. The second team you select, the one on the right, will be the
+"away" team. Once you've selected your teams, go ahead and press the submit button!
+Note that since a team cannot play against itself, you should not attempt to enter
+the same team in both lists.
+</h3>
+
+<h4>
+<u>Explanation</u> <br>
+This program works by taking the results from previous world cup tournaments, and 
+using that information to train itself. Every time the "submit" button is pressed,
+the program will look at how both teams have historically performed, and try to
+figure out which would win today. However, the training occurs slightly differently
+every time the program is run. This means that the results might vary from one use
+to another. We reccomend that you pay close attention to the accuracy displayed alongside
+the result!
+</h4>
